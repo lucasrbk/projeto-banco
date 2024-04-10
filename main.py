@@ -67,7 +67,7 @@ def sacar(contas):
     valor = float(input("Digite o valor a ser sacado: "))
     conta = buscar_conta(contas, cpf)
     if conta:
-        if conta["numero_saques"] < LIMITE_SAQUES:
+        if conta["numero_saques"] < 3:
             if conta["saldo"] >= valor:
                 conta["saldo"] -= valor
                 conta["extrato"] += f"Saque: R$ {valor:.2f}\n"
